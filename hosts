@@ -1,0 +1,15 @@
+[pgsql]
+cluster-pgsql-01.local ansible_host=127.0.0.1 ansible_port=20322 ansible_user=test
+cluster-pgsql-02.local ansible_host=127.0.0.1 ansible_port=20422 ansible_user=test
+cluster-pgsql-03.local ansible_host=127.0.0.1 ansible_port=20522 ansible_user=test
+
+[pgsql:vars]
+patroni_scope=cluster-pgsql
+patroni_rest_password=flsdjkfasdjhfsd
+patroni_postgres_password=flsdjkfasdjhfsd
+patroni_replicator_password=flsdjkfasdjhfsd
+
+# please set you VIP here
+cluster_virtual_ip="127.0.0.1"
+
+За основу выполнения данного задания мной была выбрана статья на habr https://habr.com/ru/articles/322036/ В качестве тестовых стендов в vitrualBox было развернуто 3 CentOS 7. 

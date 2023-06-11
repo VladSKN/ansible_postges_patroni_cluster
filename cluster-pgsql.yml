@@ -1,0 +1,13 @@
+---
+- hosts: pgsql
+  become: true
+
+  pre_tasks:
+    - name: Setting system hostname
+      hostname: name="{{ ansible_host }}"
+
+    - include: tasks/essentialsoftware.yml
+    - include: tasks/open-vm-tools.yml
+
+  roles:
+     - ansible-role-patroni
